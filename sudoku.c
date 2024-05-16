@@ -51,7 +51,6 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
    List* list=createList();
-   int row, col ;
    int board_full = 1;
    for(int i = 0; i < 9 && board_full; i++) {
       for (int j = 0; j < 9 ; j++) {
@@ -62,6 +61,7 @@ List* get_adj_nodes(Node* n){
       }
    }
    if (!board_full)
+   int row, col ;
    //Busca la primera casilla vacia
    for(row = 0 ; row < 9 ; row++) {
       for (col = 0 ; col < 9; col++) {

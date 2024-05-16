@@ -113,3 +113,20 @@ sudoku.c:79:31: error: ‘row’ may be used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 0cd41ae
+Thu 16 May 2024 02:48:09 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:64:4: error: expected expression before ‘int’
+   64 |    int row, col ;
+      |    ^~~
+sudoku.c:66:8: error: ‘row’ undeclared (first use in this function)
+   66 |    for(row = 0 ; row < 9 ; row++) {
+      |        ^~~
+sudoku.c:66:8: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:67:12: error: ‘col’ undeclared (first use in this function)
+   67 |       for (col = 0 ; col < 9; col++) {
+      |            ^~~
+Compilation failed
+86fe2c4
