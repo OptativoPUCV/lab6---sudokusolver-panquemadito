@@ -69,26 +69,9 @@ List* get_adj_nodes(Node* n){
 
       for (int num = 1 ; num<= 9 ; num++) {
          n->sudo[row][col] = num;
-         int valid = 1
-         for(int i = 0 ; i < 9 && valid; i++) {
-            if(i != col && n->sudo[row][i] == num) {
-               valid = 0;
-               break;
-            }
-            if (i != row && n->sudo[i][col] == num) {
-               valid = 0;
-               break;
-            }
-            int sub_row = 3 * (row / 3) + (i / 3);
-            int sub_col = 3 * (col / 3) + i % 3;
-            if (sub_row != row && sub_col != col && n->sudo[sub_row][sub_col] == num) {
-               valid = 0;
-               break;
-            }
-         }
-         if (valid) {
+         if (is_valid(n)) {
             Node* newNode = copy(n) ;
-            pushBack(list, newNode);
+            pushBack(list,newNode) ;
          }
          n->sudo[row][col] = 0;
          
