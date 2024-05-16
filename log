@@ -207,3 +207,15 @@ sudoku.c:60:40: error: ‘col’ may be used uninitialized [-Werror=maybe-uninit
 cc1: all warnings being treated as errors
 Compilation failed
 647a80c
+Thu 16 May 2024 03:01:57 AM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:61:40: error: ‘row’ may be used uninitialized [-Werror=maybe-uninitialized]
+   61 |                newNode->sudo[row][col] = num;
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+sudoku.c:61:40: error: ‘col’ may be used uninitialized [-Werror=maybe-uninitialized]
+cc1: all warnings being treated as errors
+Compilation failed
+747f8c8
