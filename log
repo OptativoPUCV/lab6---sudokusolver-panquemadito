@@ -50,3 +50,22 @@ Thu 16 May 2024 02:27:18 AM UTC:
  tests:  3|4
 total_score: 20/70
 d9b9826
+Thu 16 May 2024 02:38:19 AM UTC: 
+ sudoku.c | 53 ++++++++++++++++++-----------------------------------
+ 1 file changed, 18 insertions(+), 35 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:73:10: error: expected ‘,’ or ‘;’ before ‘for’
+   73 |          for(int i = 0 ; i < 9 && valid; i++) {
+      |          ^~~
+sudoku.c:73:26: error: ‘i’ undeclared (first use in this function)
+   73 |          for(int i = 0 ; i < 9 && valid; i++) {
+      |                          ^
+sudoku.c:73:26: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:73:45: error: expected ‘;’ before ‘)’ token
+   73 |          for(int i = 0 ; i < 9 && valid; i++) {
+      |                                             ^
+      |                                             ;
+sudoku.c:73:45: error: expected statement before ‘)’ token
+Compilation failed
+44001d8
