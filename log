@@ -277,3 +277,25 @@ Thu 16 May 2024 03:15:30 AM UTC:
  tests:  7|1
 total_score: 55/70
 62173b7
+Thu 16 May 2024 03:20:11 AM UTC: 
+ sudoku.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:117:11: error: ‘n’ undeclared (first use in this function)
+  117 |    push(s,n);
+      |           ^
+sudoku.c:117:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:124:10: error: implicit declaration of function ‘destroyStack’ [-Werror=implicit-function-declaration]
+  124 |          destroyStack(}
+      |          ^~~~~~~~~~~~
+sudoku.c:124:23: error: expected expression before ‘}’ token
+  124 |          destroyStack(}
+      |                       ^
+sudoku.c:124:23: error: expected ‘;’ before ‘}’ token
+  124 |          destroyStack(}
+      |                       ^
+      |                       ;
+cc1: all warnings being treated as errors
+Compilation failed
+233e5d3
