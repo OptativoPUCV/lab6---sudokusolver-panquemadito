@@ -141,3 +141,25 @@ sudoku.c:85:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 85f59c4
+Thu 16 May 2024 02:58:09 AM UTC: 
+ sudoku.c | 27 +++++----------------------
+ 1 file changed, 5 insertions(+), 22 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:30: error: ‘row’ undeclared (first use in this function)
+   59 |                newNode->sudo[row][col] = num;
+      |                              ^~~
+sudoku.c:59:30: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:59:35: error: ‘col’ undeclared (first use in this function)
+   59 |                newNode->sudo[row][col] = num;
+      |                                   ^~~
+sudoku.c:60:16: error: implicit declaration of function ‘insertNode’ [-Werror=implicit-function-declaration]
+   60 |                insertNode(list, new_node) ;
+      |                ^~~~~~~~~~
+sudoku.c:60:33: error: ‘new_node’ undeclared (first use in this function); did you mean ‘newNode’?
+   60 |                insertNode(list, new_node) ;
+      |                                 ^~~~~~~~
+      |                                 newNode
+cc1: all warnings being treated as errors
+Compilation failed
+781756e

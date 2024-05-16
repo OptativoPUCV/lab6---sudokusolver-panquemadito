@@ -51,37 +51,20 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
    List* list=createList();
-   int board_full = 1;
-   for(int i = 0; i < 9 && board_full; i++) {
+   for(int i = 0; i < 9 ; i++) {
       for (int j = 0; j < 9 ; j++) {
          if(n->sudo[i][j] == 0) {
-            board_full = 0;
-            break;
-         }
-      }
-   }
-   if (!board_full) {
-      int row, col ;
-   //Busca la primera casilla vacia
-      for(row = 0 ; row < 9 ; row++) {
-         for (col = 0 ; col < 9; col++) {
-            if (n->sudo[row][col] == 0) {
-               break;
+            for (int num = 1 ; num <= 9; num++) {
+               Node* newNode = copy(n) ;
+               newNode->sudo[row][col] = num;
+               insertNode(list, new_node) ;
+                  
             }
-         }   
-         if (col < 9) {
-            break;
+            return list;
          }
       }
-   // si la encontramos  disminuimos el col por el incremento del bucle
-      for (int num = 1; num <= 9;num++) {
-         Node* newNode = copy(n) ;
-         newNode->sudo[row][col] = num;
-         pushBack(list, newNode);
-   
-      }
-       return list;
    }
+   return list;
 }
 
 
