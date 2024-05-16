@@ -265,3 +265,9 @@ sudoku.c:89:35: error: ‘col’ undeclared (first use in this function)
       |                                   ^~~
 Compilation failed
 4a2cdf4
+Thu 16 May 2024 03:13:46 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+7800ea1
