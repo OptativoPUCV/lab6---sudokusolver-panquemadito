@@ -163,3 +163,21 @@ sudoku.c:60:33: error: ‘new_node’ undeclared (first use in this function); d
 cc1: all warnings being treated as errors
 Compilation failed
 781756e
+Thu 16 May 2024 03:01:02 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:30: error: ‘row’ undeclared (first use in this function)
+   59 |                newNode->sudo[row][col] = num;
+      |                              ^~~
+sudoku.c:59:30: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:59:35: error: ‘col’ undeclared (first use in this function)
+   59 |                newNode->sudo[row][col] = num;
+      |                                   ^~~
+sudoku.c:60:31: error: ‘new_node’ undeclared (first use in this function); did you mean ‘newNode’?
+   60 |                pushBack(list, new_node) ;
+      |                               ^~~~~~~~
+      |                               newNode
+Compilation failed
+fb80ada
