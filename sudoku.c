@@ -44,6 +44,39 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+   for(int i = 0; i < 9; i++) {
+      int row_seen[10] = {0};
+      int col_seen[10] = {0};
+      for (int j = 0; j < 9; j++) {
+         if (n->sudo[i][j] != 0) {
+            if (row_seen[n->sudo[i][j]]) {
+               return 0;
+            }
+            row_seen[n->sudo[i][j]] = 1;
+         }
+         if (n->sudo[j][i] != 0) {
+            if (col_seen[n->sudo[j][i]]) {
+               return 0;
+            }
+            col_seen[n->sudo[j][i]] = 1;
+         }
+      }
+   }
+   for(int row_start = 0; row_start < 9; row_start += 3) {
+      for(int col_start = 0; col_start < 9; col_start += 3) {
+         int seen[10] = {0};
+         for (int i = row_start; i < row_start + 3; i++) {
+            for (int j = col_start; j < col_start + 3 ; j++) {
+               if(n->sudo[i][j] != 0) {
+                  if (seen[n->sudo[i][j]]) {
+                     return 0;
+                  }
+                  seen[n->sudo[i][j]] = 1;
+               }
+            }
+         }
+      }
+   }
 
     return 1;
 }
@@ -68,29 +101,13 @@ List* get_adj_nodes(Node* n){
       col--;
 
       for (int num = 1 ; num<= 9 ; num++) {
-         int valid = 1 ;
-         for(int i = 0 ; i < 9 && valid; i++) {
-            if(n->sudo[row][i] == num) {
-               valid = 0;
-               break;
-            }
-            if ( n->sudo[i][col] == num) {
-               valid = 0;
-               break;
-            }
-            int sub_row = 3 * (row / 3) + (i / 3);
-            int sub_col = 3 * (col / 3) + i % 3;
-            if (n->sudo[sub_row][sub_col] == num) {
-               valid = 0;
-               break;
-            }
-         }
-         if (valid) {
-            n->sudo[row][col] = num;
-            Node* newNode = copy(n) ;
-            pushBack(list, newNode);
-         }
+         n->sudo[row][col] = num;
          
+         if (is_valid(n)) {
+            Node* newNode = copy(n);
+            pushBack(list, newNode) ;
+         }
+         n->sudo[row][col] = 0;
       }
    }
     return list;
