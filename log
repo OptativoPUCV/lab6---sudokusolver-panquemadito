@@ -231,3 +231,23 @@ Thu 16 May 2024 03:10:10 AM UTC:
  tests:  5|3
 total_score: 35/70
 e141fe7
+Thu 16 May 2024 03:12:20 AM UTC: 
+ sudoku.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:89:30: error: ‘row’ undeclared (first use in this function)
+   89 |                newNode->sudo[row][col] = num;
+      |                              ^~~
+sudoku.c:89:30: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:89:35: error: ‘col’ undeclared (first use in this function)
+   89 |                newNode->sudo[row][col] = num;
+      |                                   ^~~
+sudoku.c:93:32: error: expected ‘;’ before ‘}’ token
+   93 |                   free(newNode)
+      |                                ^
+      |                                ;
+   94 |                }
+      |                ~                
+Compilation failed
+e095534
