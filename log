@@ -16,3 +16,19 @@ sudoku.c:78:7: error: expected expression before ‘}’ token
       |       ^
 Compilation failed
 4a27e9b
+Thu 16 May 2024 01:58:24 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:75:28: error: ‘newNode’ undeclared (first use in this function); did you mean ‘newNod’?
+   75 |             pushBack(list, newNode) ;
+      |                            ^~~~~~~
+      |                            newNod
+sudoku.c:75:28: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:74:19: error: unused variable ‘newNod’ [-Werror=unused-variable]
+   74 |             Node* newNod = copy(n);
+      |                   ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+deb1a88
