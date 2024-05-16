@@ -251,3 +251,17 @@ sudoku.c:93:32: error: expected ‘;’ before ‘}’ token
       |                ~                
 Compilation failed
 e095534
+Thu 16 May 2024 03:12:27 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:89:30: error: ‘row’ undeclared (first use in this function)
+   89 |                newNode->sudo[row][col] = num;
+      |                              ^~~
+sudoku.c:89:30: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:89:35: error: ‘col’ undeclared (first use in this function)
+   89 |                newNode->sudo[row][col] = num;
+      |                                   ^~~
+Compilation failed
+4a2cdf4
