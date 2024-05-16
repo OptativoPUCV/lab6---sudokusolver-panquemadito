@@ -60,27 +60,28 @@ List* get_adj_nodes(Node* n){
          }
       }
    }
-   if (!board_full)
-   int row, col ;
+   if (!board_full) {
+      int row, col ;
    //Busca la primera casilla vacia
-   for(row = 0 ; row < 9 ; row++) {
-      for (col = 0 ; col < 9; col++) {
-         if (n->sudo[row][col] == 0) {
+      for(row = 0 ; row < 9 ; row++) {
+         for (col = 0 ; col < 9; col++) {
+            if (n->sudo[row][col] == 0) {
+               break;
+            }
+         }   
+         if (col < 9) {
             break;
          }
       }
-      if (col < 9) {
-         break;
-      }
-   }
    // si la encontramos  disminuimos el col por el incremento del bucle
-   for (int num = 1; num <= 9;num++) {
-      Node* newNode = copy(n) ;
-      newNode->sudo[row][col] = num;
-      pushBack(list, newNode);
-
+      for (int num = 1; num <= 9;num++) {
+         Node* newNode = copy(n) ;
+         newNode->sudo[row][col] = num;
+         pushBack(list, newNode);
+   
+      }
+       return list;
    }
-    return list;
 }
 
 
