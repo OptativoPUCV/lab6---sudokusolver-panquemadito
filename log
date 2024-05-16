@@ -195,3 +195,15 @@ sudoku.c:59:35: error: ‘col’ undeclared (first use in this function)
       |                                   ^~~
 Compilation failed
 b26f0a7
+Thu 16 May 2024 03:01:38 AM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:60:40: error: ‘row’ may be used uninitialized [-Werror=maybe-uninitialized]
+   60 |                newNode->sudo[row][col] = num;
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+sudoku.c:60:40: error: ‘col’ may be used uninitialized [-Werror=maybe-uninitialized]
+cc1: all warnings being treated as errors
+Compilation failed
+647a80c
