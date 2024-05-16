@@ -81,3 +81,23 @@ Thu 16 May 2024 02:44:13 AM UTC:
  tests:  1|5
 total_score: 5/70
 8ec1a70
+Thu 16 May 2024 02:46:50 AM UTC: 
+ sudoku.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c:83:4: error: expected identifier or ‘(’ before ‘}’ token
+   83 |    }
+      |    ^
+sudoku.c:84:5: error: expected identifier or ‘(’ before ‘return’
+   84 |     return list;
+      |     ^~~~~~
+sudoku.c:85:1: error: expected identifier or ‘(’ before ‘}’ token
+   85 | }
+      | ^
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:82:7: error: control reaches end of non-void function [-Werror=return-type]
+   82 |       }
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+0269805
