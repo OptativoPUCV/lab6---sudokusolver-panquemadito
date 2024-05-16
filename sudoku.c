@@ -78,8 +78,7 @@ List* get_adj_nodes(Node* n){
       Node* newNode = copy(n) ;
       newNode->sudo[row][col] = num;
       pushBack(list, newNode);
-   }
-      }
+
    }
     return list;
 }
