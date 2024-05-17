@@ -128,7 +128,7 @@ Node* DFS(Node* initial, int* cont){
 
       List* adj_nodes = get_adj_nodes(node);
       Node* adj_node;
-      while((adj_node = first(adj_nodes) != NULL)) {
+      while((adj_node = first(adj_nodes)) != NULL) {
          push(s, adj_node);
          popFront(adj_nodes);
       }
