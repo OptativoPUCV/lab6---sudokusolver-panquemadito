@@ -305,3 +305,22 @@ Thu 16 May 2024 03:20:37 AM UTC:
  tests:  7|1
 total_score: 55/70
 aada063
+Fri 17 May 2024 11:33:28 PM UTC: 
+ sudoku.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:10: error: implicit declaration of function ‘freeStack’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  126 |          freeStack(s);
+      |          ^~~~~~~~~
+      |          createStack
+sudoku.c:132:23: error: assignment to ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  132 |       while((adj_node = first(adj_nodes) != NULL)) {
+      |                       ^
+sudoku.c:137:7: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  137 |       freeList(adj_nodes);
+      |       ^~~~~~~~
+      |       createList
+cc1: all warnings being treated as errors
+Compilation failed
+45a296e
