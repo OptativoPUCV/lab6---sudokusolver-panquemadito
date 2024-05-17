@@ -123,7 +123,6 @@ Node* DFS(Node* initial, int* cont){
       (*cont)++;
 
       if (is_final(node)) {
-         freeStack(s);
          return node;
       }
 
@@ -134,12 +133,11 @@ Node* DFS(Node* initial, int* cont){
          popFront(adj_nodes);
       }
       free(node);
-      freeList(adj_nodes);
    }
    
-   freeStack(s);
    return NULL;
 }
+
 
 
 

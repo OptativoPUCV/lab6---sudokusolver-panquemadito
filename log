@@ -324,3 +324,14 @@ sudoku.c:137:7: error: implicit declaration of function ‘freeList’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 45a296e
+Fri 17 May 2024 11:35:13 PM UTC: 
+ sudoku.c | 3 ---
+ 1 file changed, 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:131:23: error: assignment to ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  131 |       while((adj_node = first(adj_nodes) != NULL)) {
+      |                       ^
+cc1: all warnings being treated as errors
+Compilation failed
+f21b373
